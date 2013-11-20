@@ -39,7 +39,7 @@ end
 gem 'unicorn'
 
 gem 'mongoid', '~> 4', github: 'mongoid/mongoid'
-
+gem 'geocoder'
 gem 'bson_ext'
 
 group :development, :test do
