@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @home.name
+p
+  strong Address:
+  = @home.address
+p
+  strong Longitude:
+  = @home.longitude
+p
+  strong Latitude:
+  = @home.latitude
+
+= link_to 'Edit', edit_home_path(@home)
+'|
+= link_to 'Back', homes_path
