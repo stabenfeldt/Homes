@@ -6,6 +6,8 @@ gem 'rails', '4.0.0'
 gem 'slim'
 gem 'slim-rails'
 gem 'fabrication'
+gem 'gmaps4rails'
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
