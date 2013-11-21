@@ -4,8 +4,6 @@ table
   tr
     th Name
     th Address
-    th Longitude
-    th Latitude
     th
     th
     th
@@ -14,8 +12,6 @@ table
     tr
       td = home.name
       td = home.address
-      td = home.longitude
-      td = home.latitude
       td = link_to 'Show', home
       td = link_to 'Edit', edit_home_path(home)
       td = link_to 'Destroy', home, :confirm => 'Are you sure?', :method => :delete
