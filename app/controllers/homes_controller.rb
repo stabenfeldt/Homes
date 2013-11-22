@@ -1,28 +1,25 @@
 class HomesController < ApplicationController
   before_action :set_home, only: [:show, :edit, :update, :destroy]
 
-  # GET /homes
-  # GET /homes.json
+
   def index
-    @homes = Home.all
+    @homes = Home.all.to_a
+    @hash = Gmaps4rails.build_markers(@homes) do |home, marker|
+      marker.lat home.latitude
+      marker.lng home.longitude
+    end
   end
 
-  # GET /homes/1
-  # GET /homes/1.json
   def show
   end
 
-  # GET /homes/new
   def new
     @home = Home.new
   end
 
-  # GET /homes/1/edit
   def edit
   end
 
-  # POST /homes
-  # POST /homes.json
   def create
     @home = Home.new(home_params)
 
@@ -37,8 +34,6 @@ class HomesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /homes/1
-  # PATCH/PUT /homes/1.json
   def update
     respond_to do |format|
       if @home.update(home_params)
@@ -51,8 +46,6 @@ class HomesController < ApplicationController
     end
   end
 
-  # DELETE /homes/1
-  # DELETE /homes/1.json
   def destroy
     @home.destroy
     respond_to do |format|
