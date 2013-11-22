@@ -1,4 +1,4 @@
-h1 Listing homes
+h1 Places I've lived in Oslo
 
 table
   tr
@@ -12,7 +12,7 @@ table
     tr
       td = home.name
       td = home.address
-      td = home.to_a28
+      td = home.to_a28.round(2)
       td = link_to 'Show', home
       td = link_to 'Edit', edit_home_path(home)
       td = link_to 'Destroy', home, :confirm => 'Are you sure?', :method => :delete
@@ -22,6 +22,12 @@ br
 div style="width: 800px; border:1px solid"
   #map style="width: 800px; height: 400px;" data-markers="#{@hash.to_json}"
 
+
+h3 Places within 30k from A28
+
+ul
+- @homes_close_to_a28.each do |home|
+  li= home.name
 
 
 = link_to 'New Home', new_home_path

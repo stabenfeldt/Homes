@@ -8,6 +8,7 @@ class HomesController < ApplicationController
       marker.lat home.latitude
       marker.lng home.longitude
     end
+    @homes_close_to_a28 = Home.near("Akersgata 28, Oslo", 10, :units => :km).all.to_a
   end
 
   def show
