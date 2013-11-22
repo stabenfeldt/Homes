@@ -13,6 +13,8 @@ Bundler.require(:default, Rails.env)
 
 module MyHomes
   class Application < Rails::Application
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+    config.assets.initialize_on_precompile = false
 
     config.generators do |g|
       g.fixture_replacement :fabrication
